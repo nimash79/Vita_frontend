@@ -1,0 +1,212 @@
+/* Forms */
+.custom-input-container {
+  border-radius: 8px;
+  border: 1px solid var(--primary_300);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 56px;
+  padding: 0 24px;
+  position: relative;
+}
+.custom-input-container .label {
+  font-size: 14px;
+  font-weight: 30;
+  position: absolute;
+  top: -12px;
+  inset-inline-start: 20px;
+  padding: 0 8px;
+  border-radius: 8px;
+  color: var(--neutral_f9)
+}
+.custom-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-inline-start : 8px;
+  width: 100%;
+  height: 100%;
+  color: var(--neutral_e9);
+}
+.custom-input::placeholder {
+  color: var(--neutral_e9);
+}
+.custom-input.without-margin {
+  margin: 0;
+}
+.custom-button {
+  background-color: var(--primary_400);
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  width: 100%;
+  padding: 5% 0;
+  color: var(--neutral_f9);
+}
+
+.custom-checkbox {
+  border-radius: 7px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary_200);
+  cursor: pointer;
+}
+.custom-checkbox.active {
+  border: 2px solid #a6ff00;
+}
+
+.custom-label {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--neutral_f9);
+}
+
+.custom-calendar-input {
+  width: 100%;
+  height: 100%;
+}
+.custom-calendar-input .rmdp-input {
+  background-color: transparent;
+  border: none;
+  color: var(--neutral_e9);
+  margin-inline-end: 8px;
+  width: 100%;
+  height: 100%;
+}
+.custom-calendar-input .rmdp-input:focus {
+  border: none;
+  box-shadow: none;
+}
+/* End Forms */
+
+/* Loading */
+.loading-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End Loading */
+
+/* Modal */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.modal-buttons button {
+  width: 45%;
+  padding: 8px 0;
+}
+.modal-cancel-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid var(--primary_400);
+  color: var(--primary_400);
+}
+.modal-submit-button {
+  background-color: var(--primary_400);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  color: var(--neutral_f9);
+}
+/* End Modal */
+
+/* Custom Modal */
+.custom-modal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: radial-gradient(
+      98% 96.48% at 0% 3.52%,
+      #29cfa3 0%,
+      #1c1b33 74.87%
+    );
+  border: 1px solid #17b9ff1a;
+  border-bottom-width: 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 0 20px;
+  z-index: 50;
+}
+.custom-modal .title {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin: 32px 0;
+}
+/* End Custom Modal */
+
+/* Custom Table */
+.custom-table-header {
+  display: inline-block;
+  background-color: var(--primary_600);
+  border-bottom: 2px dashed var(--secondary_300);
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.custom-table.with-header {
+  border-top-left-radius: 0;
+}
+.custom-table {
+  background-color: var(--primary_600);
+  border-radius: 8px;
+}
+.custom-table td, .custom-table th {
+  padding: 10px;
+  text-align: center;
+}
+.custom-table td {
+  border: 1px solid var(--secondary_300);
+}
+.custom-table td > * {
+  margin: 0 auto;
+}
+.custom-table th {
+  border-right: 1px solid var(--secondary_300);
+  border-bottom: 1px solid var(--secondary_300);
+}
+.custom-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.custom-table tr > *:last-child {
+  border-right: 0;
+}
+/* End Custom Table */
+
+/* Custom Radio Button */
+.custom-radio {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  color: #a6ff00;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--primary_200);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+.custom-radio::before {
+  content: "";
+  width: 14.5px;
+  height: 14.5px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: #a6ff00;
+}
+.custom-radio:checked::before {
+  transform: scale(1);
+}
+/* End Custom Radio Button */

@@ -1,0 +1,1141 @@
+@font-face {
+  font-family: Shabnam;
+  src:
+    url("/font/Shabnam/Shabnam-FD.ttf") format("truetype"),
+    url("/font/Shabnam/Shabnam-FD.woff") format("woff"),
+    url("/font/Shabnam/Shabnam-FD.woff2") format("woff2"),
+    url("/font/Shabnam/Shabnam-FD.eot") format("embedded-opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Shabnam;
+  src:
+    url("/font/Shabnam/Shabnam-Medium-FD.ttf") format("truetype"),
+    url("/font/Shabnam/Shabnam-Medium-FD.woff") format("woff"),
+    url("/font/Shabnam/Shabnam-Medium-FD.woff2") format("woff2"),
+    url("/font/Shabnam/Shabnam-Medium-FD.eot") format("embedded-opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Shabnam;
+  src:
+    url("/font/Shabnam/Shabnam-Bold-FD.ttf") format("truetype"),
+    url("/font/Shabnam/Shabnam-Bold-FD.woff") format("woff"),
+    url("/font/Shabnam/Shabnam-Bold-FD.woff2") format("woff2"),
+    url("/font/Shabnam/Shabnam-Bold-FD.eot") format("embedded-opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Shabnam;
+  src:
+    url("/font/Shabnam/Shabnam-Light-FD.ttf") format("truetype"),
+    url("/font/Shabnam/Shabnam-Light-FD.woff") format("woff"),
+    url("/font/Shabnam/Shabnam-Light-FD.woff2") format("woff2"),
+    url("/font/Shabnam/Shabnam-Light-FD.eot") format("embedded-opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Shabnam;
+  src:
+    url("/font/Shabnam/Shabnam-Thin-FD.ttf") format("truetype"),
+    url("/font/Shabnam/Shabnam-Thin-FD.woff") format("woff"),
+    url("/font/Shabnam/Shabnam-Thin-FD.woff2") format("woff2"),
+    url("/font/Shabnam/Shabnam-Thin-FD.eot") format("embedded-opentype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Changa One";
+  src: url("/font/Changa_One/ChangaOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Primary – Mint Teal */
+  --primary_50: #e6f7f5;
+  --primary_100: #ccefe9;
+  --primary_200: #99dfd4;
+  --primary_300: #66cfc0;
+  --primary_400: #33bfae;
+  --primary_600: #1fa092;
+  --primary_800: #0f4f49;
+
+  /* Secondary – Soft Blue */
+  --secondary_300: #7aa7ff;
+
+  /* Neutrals */
+  --neutral_f9: #f9fbfb;
+  --neutral_f2: #f2f4f5;
+  --neutral_e9: #e9ecee;
+  --neutral_200: #d1d5d8;
+  --neutral_600: #6b7280;
+  --neutral_3d: #2f343a;
+
+  /* States */
+  --success: #16a34a;
+  --success_light2: #ecfdf3;
+
+  --warning: #d97706;
+  --warning_light1: #facc15;
+  --warning_light2: #fffbeb;
+
+  --error: #dc2626;
+  --error_light1: #f87171;
+  --error_light2: #fef2f2;
+
+  /* Background gradients (light theme) */
+  --bg_0: linear-gradient(
+    135deg,
+    #0b2f2b 0%,
+    #0f3b35 18%,
+    #13514a 38%,
+    #123a55 65%,
+    #0c2230 100%
+  );
+
+  /* Slightly stronger variant (for landing pages) */
+  --bg_1: linear-gradient(
+    135deg,
+    #0f4f49 0%,
+    #11625a 30%,
+    #0f3c4a 65%,
+    #0b2a35 100%
+  );
+
+  /* Radial + linear combo feel (still just linear here) */
+  --bg_2: linear-gradient(
+    135deg,
+    #08302c 0%,
+    #0b4e46 35%,
+    #1fa092 55%,
+    #2a5bd7 78%,
+    #0a2230 100%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Changa One", "Segoe UI";
+}
+input {
+  font-family: "Changa One", "Segoe UI";
+}
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  --moz-appearance: textfield;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-layout {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  background: var(--bg_0);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 0 25px;
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-setting-devices {
+    max-width: 370px;
+    margin: 0 auto;
+  }
+  .modal-backdrop {
+    width: 420px;
+    margin: 0 auto;
+  }
+  .custom-modal {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* Splash Screen */
+.splash-screen {
+  background: linear-gradient(180deg, #3f51b5 0%, #0e1124 100%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.splash-screen-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app-subject {
+  font-size: 24px;
+  font-weight: 500;
+  color: #f2f2f2;
+  margin-bottom: 16px;
+}
+.app-name {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--primary_100);
+  margin-bottom: 28px;
+}
+.app-logo {
+  width: 128px;
+  height: 131px;
+}
+/* End Splash Screen */
+
+/* Authentication */
+.login-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+}
+.login {
+  width: 100%;
+}
+.login .header {
+  font-family: Shabnam;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--neutral_f2);
+  margin-bottom: 24px;
+}
+.forget-password-link {
+  margin-top: 8px;
+}
+.forget-password-link a {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary_600);
+}
+.login .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--neutral_f2);
+}
+.login-guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+.login-guide p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--neutral_f2);
+}
+.login-guide a {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary_600);
+  margin-inline-start: 8px;
+  text-decoration: underline;
+}
+/* End Athentication */
+
+/* Home */
+.home .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 16px;
+}
+.home .header .hello {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--neutral_f2);
+}
+.home .description {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--neutral_ed);
+  margin-top: 8px;
+}
+.separator {
+  height: 1px;
+  background-color: var(--neutral_3d);
+  margin: 16px 0;
+}
+.btn-select-devices {
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  background-color: var(--primary_400);
+  padding: 9px 12.5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--neutral_f9);
+  border: 3px solid transparent;
+}
+.btn-select-devices.active {
+  background-color: var(--shade_2);
+  border-color: var(--primary_300);
+}
+.select-all-devices-container {
+  display: flex;
+  align-items: center;
+  margin-inline-start: 12px;
+}
+.select-all-devices-container label {
+  margin-left: 8px;
+}
+
+.btn-refresh {
+  background-color: var(--primary_400);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.devices {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.devices > * {
+  flex: 0 0 calc(50% - 8px);
+}
+.device {
+  position: relative;
+  background: radial-gradient(
+      69.9% 110.16% at 17.58% 4.3%,
+      rgba(46, 167, 255, 0.25) 0%,
+      rgba(28, 27, 51, 0.1) 78.06%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 20px;
+
+  /* background-blend-mode: overlay; */
+  /* mix-blend-mode: overlay; */
+  border-width: 1px;
+  border-color: #17b9ff1a;
+  border-style: solid;
+}
+
+.device-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+}
+.device .icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid var(--primary_200);
+
+  /* background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    #ffffff 100%
+  ); */
+  background-color: var(--primary_300);
+  box-shadow:
+    0px 1px 0px rgba(0, 0, 0, 0.05),
+    0px 4px 4px rgba(0, 0, 0, 0.05),
+    0px 10px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+}
+.device-name {
+  margin-top: 16px;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--neutral_f2);
+}
+.device-temp {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--primary_200);
+  opacity: 0.8;
+}
+.device-devider {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-blend-mode: overlay;
+  height: 1px;
+  width: 100%;
+  margin: 16px 0;
+}
+.device-status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+.device-status p {
+  font-size: 17px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-left: 8px;
+  width: 52px;
+}
+.device-checkbox {
+  position: absolute;
+  inset-inline-start: 8px;
+  top: 8px;
+}
+.btn-setting-devices {
+  position: fixed;
+  left: 25px;
+  right: 25px;
+  bottom: 32px;
+}
+/* End Home */
+
+/* Settings */
+.settings .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.settings .header .icon {
+  cursor: pointer;
+}
+.settings .header > * {
+  flex: 0.33;
+}
+.settings .header-title {
+  font-size: 20px;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+.settings .title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.settings .buttons {
+  border-radius: 8px;
+  background-color: var(--primary_600);
+  margin-top: 24px;
+}
+.settings .button {
+  padding: 16px;
+  color: var(--neutral_f9);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.settings .button-text {
+  margin-inline-start: 8px;
+}
+.settings .button-arrow {
+  margin-inline-start: auto;
+}
+.settings .button-separator {
+  height: 1px;
+  margin: 0px 16px;
+  background-color: var(--secondary_300);
+}
+.settings .description {
+  font-size: 13px;
+  font-weight: 300;
+  margin-top: 8px;
+  text-align: justify;
+}
+.economy-form {
+  margin-top: 16px;
+}
+.economy-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 12px;
+}
+.economy-field-guide {
+  font-size: 11px;
+  margin: 8px 0;
+  color: var(--warning);
+}
+.economy-date-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.economy-form label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-inline-end: 8px;
+}
+.economy-select-time {
+  position: relative;
+}
+.economy-select-time-button {
+  border: 1px solid var(--neutral_f9);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 71px;
+  height: 38px;
+  padding: 11px 8.5px;
+}
+.economy-select-time-button span {
+  background-color: transparent;
+  color: var(--primary_100);
+  margin-left: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.economy-select-time .options-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: linear-gradient(166.39deg, #6171c8 0.63%, #1c2247 90.36%);
+  border: 1px solid var(--primary_50);
+  border-radius: 14px;
+}
+.economy-select-time .options {
+  height: 150px;
+  overflow-y: scroll;
+  margin: 8px 2px;
+  direction: ltr;
+}
+.economy-select-time .options div {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--neutral_200);
+  border-radius: 14px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--neutral_600);
+  border-radius: 14px;
+  border: 1px solid var(--neutral_200);
+}
+
+.settings-submit {
+  margin-top: 32px;
+}
+/* End Settings */
+
+/* Device Page */
+.device-page .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.device-page .header .icon {
+  cursor: pointer;
+}
+.device-page .header-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.device-page .header-title p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+.device-page .edit-button {
+  cursor: pointer;
+}
+.battery-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.battery-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--neutral_f2);
+  margin-inline-start: 8px;
+}
+.temperature-progress {
+  margin-top: 24px;
+}
+.controller-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: -45px;
+  direction: rtl;
+}
+.controller-container > div {
+  cursor: pointer;
+}
+.minmax-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.minmax-container button {
+  outline: none;
+  padding: 8.5px 24px;
+  background-color: transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.min-btn {
+  border: 1px solid var(--primary_600);
+  color: var(--primary_600);
+}
+.max-btn {
+  border: 1px solid #83160d;
+  color: #f3b8b4;
+}
+.min-btn.active {
+  background-color: var(--primary_200);
+  color: var(--primary_800);
+  border-width: 0px;
+}
+.max-btn.active {
+  background-color: #f3b8b4;
+  color: #69120b;
+  border-width: 0px;
+}
+.features {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.economy-feature label {
+  margin-inline-start: 8px;
+}
+.device-page .guide {
+  font-size: 11px;
+  margin-top: 8px;
+  color: var(--neutral_200);
+}
+.device-info-container {
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+}
+.device-info {
+  margin-top: 24px;
+  background: radial-gradient(
+      89.46% 140.59% at 3.59% 0%,
+      rgba(46, 167, 255, 0.25) 0%,
+      rgba(28, 27, 51, 0.1) 78.06%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 32px;
+  /* border: 1px solid; */
+}
+.device-info-part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.device-info-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+.device-info-value {
+  font-size: 22px;
+  font-weight: 500;
+}
+.device-info-label {
+  font-size: 16px;
+  font-weight: 400;
+}
+.report-container {
+  background: linear-gradient(
+    180deg,
+    rgba(46, 167, 255, 0) 57.41%,
+    rgba(46, 167, 255, 0.1) 100%
+  );
+  border: 1px solid #17b9ff1a;
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 15px 30px 0px #00000026;
+  box-shadow: 0px 5px 10px 0px #0000001a;
+  box-shadow: 0px 2px 4px 0px #0000001a;
+  border-radius: 30px;
+  margin-top: 32px;
+  margin-bottom: 54px;
+}
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-right: 24px;
+  margin-left: 16px;
+}
+.report-title {
+  display: flex;
+  align-items: center;
+}
+.report-title p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-inline-start: 16px;
+  color: var(--primary_50);
+}
+.report-chart-container {
+  background: radial-gradient(
+      69.9% 110.16% at 17.58% 4.3%,
+      rgba(46, 167, 255, 0.25) 0%,
+      rgba(28, 27, 51, 0.1) 78.06%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border: 1px solid #17b9ff1a;
+  border-radius: 30px;
+  margin: 0 20px;
+  margin-top: 32px;
+  padding: 10px;
+  margin-bottom: 24px;
+}
+.report-select {
+  position: relative;
+}
+.report-select-button {
+  border: 1px solid var(--neutral_f9);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 93px;
+  height: 40px;
+  padding: 11px 8.5px;
+}
+.report-select-button span {
+  background-color: transparent;
+  color: var(--primary_100);
+  margin-inline-end: 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.report-select .options-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: linear-gradient(166.39deg, #6171c8 0.63%, #1c2247 90.36%);
+  border: 1px solid var(--primary_50);
+  border-radius: 14px;
+}
+.report-select .options {
+  margin: 8px 2px;
+  direction: ltr;
+}
+.report-select .options div {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+/* End Device Page */
+
+/* Settings Layout */
+.settings-layout .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+.settings-layout .header .icon {
+  cursor: pointer;
+}
+.settings-layout .header > * {
+  flex: 0.33;
+}
+.settings-layout .header-title {
+  font-size: 20px;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+.settings-layout .title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.settings-layout .header-option {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+/* End Settings Layout */
+
+/* My Devices Page */
+.my-devices {
+  border-radius: 16px;
+  background: radial-gradient(
+      69.9% 110.16% at 17.58% 4.3%,
+      rgba(46, 167, 255, 0.25) 0%,
+      rgba(28, 27, 51, 0.1) 78.06%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-width: 1px;
+  border-color: #17b9ff1a;
+  border-style: solid;
+}
+.my-device {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+.my-device-name {
+  font-size: 16zpx;
+  font-weight: 400;
+  color: var(--neutral_f2);
+}
+.my-device .operations {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+}
+.my-devices .separator {
+  margin: 0px 16px;
+  background-color: var(--secondary_300);
+  border-radius: 8px;
+}
+.my-device-checkbox {
+  margin-inline-end: 8px;
+}
+.select-all-my-devices-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.my-devices-empty {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my-devices-empty p {
+  margin-bottom: 24px;
+}
+.my-devices-empty button {
+  padding: 8px 32px;
+  width: auto;
+  border-radius: 8px;
+}
+.my-devices-features-title {
+  margin-bottom: 24px;
+}
+.my-devices-features-title span {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #17b9ff1a;
+}
+.my-devices-features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.summer-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.wifi-feature {
+  display: flex;
+  align-items: center;
+}
+.refresh-rate-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.refresh-rate-label {
+  margin-bottom: 8px;
+}
+.refresh-rate-select {
+  position: relative;
+}
+.refresh-rate-select-button {
+  border: 1px solid var(--neutral_f9);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+  height: 40px;
+  padding: 11px 8.5px;
+  cursor: pointer;
+}
+.refresh-rate-select-button span {
+  background-color: transparent;
+  color: var(--primary_100);
+  margin-inline-end: 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.refresh-rate-select .options-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: linear-gradient(166.39deg, #6171c8 0.63%, #1c2247 90.36%);
+  border: 1px solid var(--primary_50);
+  border-radius: 14px;
+}
+.refresh-rate-select .options {
+  height: 150px;
+  overflow-y: scroll;
+  margin: 8px 2px;
+}
+.refresh-rate-select .options div {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+/* End My Devices Page */
+
+/* My Account Page */
+.my-account {
+  background-color: #26316d;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #17b9ff1a;
+}
+/* End My Account Page */
+
+/* GSM CONTROL Page */
+.gsm-control {
+  position: relative;
+  min-height: 100vh;
+}
+.gsm-control .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  text-wrap: nowrap;
+}
+.gsm-control .header .icon {
+  cursor: pointer;
+}
+.gsm-control .header > * {
+  flex: 0.33;
+}
+.gsm-control .header-title {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}
+.gsm-control table {
+  background-color: var(--primary_600);
+  border-radius: 8px;
+  margin: 64px auto;
+  margin-bottom: 0;
+  width: 200px;
+  max-width: 200px;
+  overflow: scroll;
+}
+.gsm-control .button {
+  position: absolute;
+  bottom: 32px;
+  right: 0;
+  left: 0;
+}
+/* End GSM CONTROL PAGE */
+
+/* ZONE SETTINGS Page */
+.zone-settings {
+  position: relative;
+  min-height: 100vh;
+}
+.zone-settings .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  text-wrap: nowrap;
+}
+.zone-settings .header .icon {
+  cursor: pointer;
+}
+.zone-settings .header > * {
+  flex: 0.33;
+}
+.zone-settings .header-title {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}
+.zone-settings .custom-table-header {
+  margin-top: 32px;
+}
+.zone-settings .custom-table {
+  margin: 0 auto;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.zone-settings td, .zone-settings th {
+  padding: 10px 5px;
+}
+.zone-settings .button {
+  position: absolute;
+  bottom: 32px;
+  right: 0;
+  left: 0;
+}
+/* End ZONE SETTINGS PAGE */
+
+/* REMOTE SETTINGS Page */
+.remote-settings {
+  position: relative;
+  min-height: 100vh;
+}
+.remote-settings .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.remote-settings .header .icon {
+  cursor: pointer;
+}
+.remote-settings .header > * {
+  flex: 0.33;
+}
+.remote-settings .header-title {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}
+.remote-settings table {
+  margin: 32px auto;
+}
+.remote-settings .button {
+  position: absolute;
+  bottom: 32px;
+  right: 0;
+  left: 0;
+}
+/* End REMOTE SETTINGS PAGE */
+
+/* ZONE STATE PAGE */
+.zone-state {
+  position: relative;
+  min-height: 100vh;
+}
+.zone-state .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.zone-state .header .icon {
+  cursor: pointer;
+}
+.zone-state .header > * {
+  flex: 0.33;
+}
+.zone-state .header-title {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}
+.zone-state-table {
+  margin-top: 32px;
+  width: 100%;
+}
+.zone-state-table th, .zone-state-table td {
+  text-align: center;
+  width: 33.33%;
+}
+.zone-state-table th {
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--secondary_300);
+}
+.zone-state-table td {
+  padding: 12px 0;
+}
+/* End ZONE STATE PAGE */
