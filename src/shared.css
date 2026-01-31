@@ -43,6 +43,12 @@
   padding: 5% 0;
   color: var(--neutral_f9);
 }
+.lang-en .custom-button {
+  font-family: "Changa One", 'Segoe UI';
+}
+.lang-fa .custom-button {
+  font-family: "Shabnam", 'Segoe UI';
+}
 
 .custom-checkbox {
   border-radius: 7px;
@@ -154,8 +160,11 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-.custom-table.with-header {
+.lang-en .custom-table.with-header {
   border-top-left-radius: 0;
+}
+.lang-fa .custom-table.with-header {
+  border-top-right-radius: 0;
 }
 .custom-table {
   background-color: var(--primary_600);
@@ -172,14 +181,14 @@
   margin: 0 auto;
 }
 .custom-table th {
-  border-right: 1px solid var(--secondary_300);
+  border-inline-end: 1px solid var(--secondary_300);
   border-bottom: 1px solid var(--secondary_300);
 }
 .custom-table tbody tr:last-child > * {
   border-bottom: 0;
 }
 .custom-table tr > *:last-child {
-  border-right: 0;
+  border-inline-end: 0;
 }
 /* End Custom Table */
 

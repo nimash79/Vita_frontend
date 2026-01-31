@@ -1,5 +1,7 @@
+import { useTranslation } from "react-i18next";
 
 const ArrowBackIcon = (props) => {
+  const {i18n} = useTranslation();
   return (
     <svg
       width="30"
@@ -7,7 +9,7 @@ const ArrowBackIcon = (props) => {
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{rotate: "180deg"}}
+      style={i18n.resolvedLanguage === "en" ? {rotate: "180deg"} : {}}
       {...props}
     >
       <path

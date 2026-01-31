@@ -3,9 +3,12 @@ import { useNavigate } from "react-router";
 import ArrowBackIcon from "../../components/icons/ArrowBackIcon";
 import CustomCheckbox from "../../components/shared/CustomCheckbox";
 import CustomButton from "../../components/shared/CustomButton";
+import { useTranslation } from "react-i18next";
 
 const RemoteSettingsPage = () => {
   const [check1, setCheck1] = useState(false);
+
+  const {t} = useTranslation();
 
   const navigate = useNavigate();
   return (
@@ -14,25 +17,25 @@ const RemoteSettingsPage = () => {
         <div className="icon" onClick={() => navigate(-1)}>
           <ArrowBackIcon />
         </div>
-        <p className="header-title">REMOTE SETTINGS</p>
+        <p className="header-title">{t("remoteSettingsPage:title")}</p>
         <div></div>
       </div>
       <table className="custom-table">
         <thead>
           <tr>
             <th scope="col"></th>
-            <th scope="col">Z1</th>
-            <th scope="col">Z2</th>
-            <th scope="col">Z3</th>
-            <th scope="col">Z4</th>
-            <th scope="col">Z5</th>
-            <th scope="col">Z6</th>
-            <th scope="col">Z7</th>
+            <th scope="col">{t("remoteSettingsPage:zone_number", {number: 1})}</th>
+            <th scope="col">{t("remoteSettingsPage:zone_number", {number: 2})}</th>
+            <th scope="col">{t("remoteSettingsPage:zone_number", {number: 3})}</th>
+            <th scope="col">{t("remoteSettingsPage:zone_number", {number: 4})}</th>
+            <th scope="col">{t("remoteSettingsPage:zone_number", {number: 5})}</th>
+            <th scope="col">{t("remoteSettingsPage:zone_number", {number: 6})}</th>
+            <th scope="col">{t("remoteSettingsPage:zone_number", {number: 7})}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>R0</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 0})}</th>
             <td>
               <CustomCheckbox checked={check1} onChange={() => setCheck1(c => !c)} />
             </td>
@@ -56,7 +59,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R1</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 1})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -80,7 +83,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R2</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 2})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -104,7 +107,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R3</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 3})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -128,7 +131,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R4</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 4})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -152,7 +155,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R5</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 5})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -176,7 +179,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R6</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 6})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -200,7 +203,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R7</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 7})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -224,7 +227,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R8</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 8})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -248,7 +251,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R9</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 9})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -272,7 +275,7 @@ const RemoteSettingsPage = () => {
             </td>
           </tr>
           <tr>
-            <th>R10</th>
+            <th>{t("remoteSettingsPage:remote_number", {number: 10})}</th>
             <td>
               <CustomCheckbox />
             </td>
@@ -298,7 +301,7 @@ const RemoteSettingsPage = () => {
         </tbody>
       </table>
       <div className="button">
-        <CustomButton text="Confirm" />
+        <CustomButton text={t("common:confirm")} />
       </div>
     </div>
   );

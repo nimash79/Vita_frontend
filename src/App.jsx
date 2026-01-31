@@ -1,11 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import MainLayout from "./layouts/MainLayout";
-import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 import HomePage from "./pages/HomePage";
 import Login from "./pages/authentication/Login";
-import SplashScreen from "./pages/SplashScreen";
 import Logout from "./pages/authentication/Logout";
 import Register from "./pages/authentication/Register";
 import VerificationPage from "./pages/authentication/VerificationPage";
@@ -17,24 +16,27 @@ import RemoteSettingsPage from "./pages/settings/RemoteSettingsPage";
 import ZoneStatePage from "./pages/settings/ZoneStatePage";
 import WiredZoneSettingsPage from "./pages/settings/WiredZoneSettingsPage";
 import WirelessZoneSettingsPage from "./pages/settings/WirelessZoneSettingsPage";
+import i18n from "./localization/i18n";
+import { useEffect } from "react";
 
 const App = () => {
-  const [isReady, setIsReady] = useState(false);
+
+  const RTL_LANGS = new Set(["ar", "fa", "he", "ur"]);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsReady(true);
-    }, 50)
-  }, [])
-  
-  if (!isReady) {
-    return (
-      <MainLayout splash={true}>
-        <SplashScreen />
-      </MainLayout>
-    );
-  }
+    const lang = i18n.resolvedLanguage || i18n.language;
+    const base = lang.split("-")[0];
 
+    document.documentElement.lang = lang;
+
+    const isRtl = RTL_LANGS.has(base);
+    document.documentElement.dir = isRtl ? "rtl" : "ltr";
+
+    // optional: class for easy CSS targeting
+    document.documentElement.classList.remove("lang-en", "lang-fa");
+    document.documentElement.classList.add(`lang-${base}`);
+  }, [i18n.resolvedLanguage, i18n.language]);
 
   return (
     <MainLayout>

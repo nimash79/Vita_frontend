@@ -1,8 +1,15 @@
 export default {
-    hi: "Hi!",
-    description: "You have {{total_count}} devices, {{count}} of which is active.",
-    group_settings: "Group device setup",
-    on: "On",
-    off: "Off",
-    device_settings: "Setting up {{count}} devices"
+    wifi: "WIFI",
+    sms: "SMS",
+    time_settings: "TIME SETTINGS",
+    zone_settings: "ZONE SETTINGS",
+    zone_state: "ZONE STATE",
+    output_settings: "OUTPUT SETTINGS",
+    alarm_period: "ALARM PERIOD",
+    system_mode: "SYSTEM MODE",
+    tell_settings: "TELL SETTINGS",
+    gsm_settings: "GSM SETTINGS",
+    gsm_number_control: "GSM NUMBER CONTROL",
+    change_menu_password: "CHANGE MENU PASSWORD",
+    change_sms_password: "CHANGE SMS PASSWORD",
 }

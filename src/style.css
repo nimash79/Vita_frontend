@@ -121,11 +121,21 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Changa One", "Segoe UI";
+.lang-fa body {
+  font-family: "Shabnam", 'Segoe UI';
+  direction: rtl;
 }
-input {
-  font-family: "Changa One", "Segoe UI";
+.lang-fa input {
+  font-family: "Shabnam", 'Segoe UI';
+  direction: rtl;
+}
+.lang-en body {
+  font-family: "Changa One", 'Segoe UI';
+  direction: ltr;
+}
+.lang-en input {
+  font-family: "Changa One", 'Segoe UI';
+  direction: ltr;
 }
 input[type="submit"],
 button {
@@ -449,14 +459,36 @@ p {
 .settings .header .icon {
   cursor: pointer;
 }
-.settings .header > * {
-  flex: 0.33;
+.settings .dual-buttons {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--neutral_200);
+  border-radius: 8px;
+  padding: 4px;
+}
+.settings .dual-buttons > div:nth-child(1) {
+  margin-inline-end: 10px;
+}
+.settings .dual-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+}
+.settings .dual-button.active {
+  background-color: var(--secondary_300);
+}
+.settings .dual-button p {
+  margin-inline-start: 4px;
+  font-size: 12px;
 }
 .settings .header-title {
   font-size: 20px;
   font-weight: 700;
-  flex: 1;
-  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--neutral_e9);
 }
 .settings .title {
   font-size: 16px;
@@ -1016,7 +1048,7 @@ p {
 }
 .gsm-control .button {
   position: absolute;
-  bottom: 32px;
+  bottom: 16px;
   right: 0;
   left: 0;
 }
@@ -1059,10 +1091,8 @@ p {
   padding: 10px 5px;
 }
 .zone-settings .button {
-  position: absolute;
-  bottom: 32px;
-  right: 0;
-  left: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 /* End ZONE SETTINGS PAGE */
 
@@ -1094,7 +1124,7 @@ p {
 }
 .remote-settings .button {
   position: absolute;
-  bottom: 32px;
+  bottom: 16px;
   right: 0;
   left: 0;
 }

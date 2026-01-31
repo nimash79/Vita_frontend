@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import ArrowBackIcon from "../../components/icons/ArrowBackIcon";
-import CustomCheckbox from "../../components/shared/CustomCheckbox";
-import CustomButton from "../../components/shared/CustomButton";
-import CustomSwitch from './../../components/shared/CustomSwitch';
+import CustomSwitch from "./../../components/shared/CustomSwitch";
+import { useTranslation } from "react-i18next";
 
 const ZoneStatePage = () => {
   const [check1, setCheck1] = useState(false);
+
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
   return (
@@ -15,88 +16,88 @@ const ZoneStatePage = () => {
         <div className="icon" onClick={() => navigate(-1)}>
           <ArrowBackIcon />
         </div>
-        <p className="header-title">ZONE STATE</p>
+        <p className="header-title">{t("zoneStatePage:title")}</p>
         <div></div>
       </div>
       <table className="zone-state-table">
         <thead>
-            <tr>
-                <th>ZONE</th>
-                <td></td>
-                <th>STATE</th>
-            </tr>
+          <tr>
+            <th>{t("zoneStatePage:zone")}</th>
+            <td></td>
+            <th>{t("zoneStatePage:state")}</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>ZONE 1</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={true} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 2</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 3</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 4</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 5</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={true} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 6</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 7</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 8</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 9</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
-            <tr>
-                <td>ZONE 10</td>
-                <td></td>
-                <td>
-                    <CustomSwitch checked={false} />
-                </td>
-            </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 1 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={true} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 2 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 3 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 4 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 5 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={true} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 6 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 7 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 8 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 9 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
+          <tr>
+            <td>{t("zoneStatePage:zone_number", { number: 10 })}</td>
+            <td></td>
+            <td>
+              <CustomSwitch checked={false} />
+            </td>
+          </tr>
         </tbody>
       </table>
       {/* <div className="button">
