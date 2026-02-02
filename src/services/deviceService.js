@@ -39,3 +39,7 @@ export const changeZoneStates = ({ deviceId, zone_states }) => {
     JSON.stringify({ deviceId, zone_states }),
   );
 };
+
+export const getZoneStates = ({ deviceId }) => {
+  return http.get(`${API_URL}/devices/zone-states/${deviceId}`);
+};

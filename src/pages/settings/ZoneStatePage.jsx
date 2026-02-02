@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import ArrowBackIcon from "../../components/icons/ArrowBackIcon";
 import CustomSwitch from "./../../components/shared/CustomSwitch";
 import CustomButton from "./../../components/shared/CustomButton";
 import { useTranslation } from "react-i18next";
 import { notif_error, notif_success } from "../../utils/toast";
-import { changeZoneStates } from "../../services/deviceService";
+import { changeZoneStates, getZoneStates } from "../../services/deviceService";
 
 const ZoneStatePage = () => {
   const [state1, setState1] = useState(false);
@@ -20,6 +20,20 @@ const ZoneStatePage = () => {
   const navigate = useNavigate();
 
   const { t } = useTranslation();
+
+  useEffect(() => {
+    (async () => {
+      const {data} = await getZoneStates({deviceId: "12345"});
+      setState1(data.data.zone_states[0]);
+      setState2(data.data.zone_states[1]);
+      setState3(data.data.zone_states[2]);
+      setState4(data.data.zone_states[3]);
+      setState5(data.data.zone_states[4]);
+      setState6(data.data.zone_states[5]);
+      setState7(data.data.zone_states[6]);
+      setState8(data.data.zone_states[7]);
+    })();
+  }, [])
 
   const onSubmit = async () => {
     try {
