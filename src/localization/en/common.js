@@ -5,4 +5,11 @@ export default {
     success: "Settings applied successfully.",
     clear: "Clear",
     confirm: "Confirm",
+    control: "Control",
+    phone_settings: "Contacts",
+    device_settings: "Device",
+    zone_settings: "Zone",
+    sms: "SMS",
+    wifi: "WIFI",
+    save: "Save",
 }

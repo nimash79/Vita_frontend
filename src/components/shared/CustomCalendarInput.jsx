@@ -29,6 +29,7 @@ const CustomCalendarInput = ({
         onChange={onChange}
         containerClassName="custom-calendar-input"
         calendarPosition="bottom-right"
+        editable={false}
         {...props}
       />
       {withReset && (

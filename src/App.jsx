@@ -18,9 +18,11 @@ import WiredZoneSettingsPage from "./pages/settings/WiredZoneSettingsPage";
 import WirelessZoneSettingsPage from "./pages/settings/WirelessZoneSettingsPage";
 import i18n from "./localization/i18n";
 import { useEffect } from "react";
+import DevicePage from "./pages/DevicePage";
+import ContactsPage from "./pages/ContactsPage";
+import ZonePage from "./pages/ZonePage";
 
 const App = () => {
-
   const RTL_LANGS = new Set(["ar", "fa", "he", "ur"]);
   const { i18n } = useTranslation();
 
@@ -39,10 +41,15 @@ const App = () => {
   }, [i18n.resolvedLanguage, i18n.language]);
 
   return (
-    <MainLayout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <MainLayout>
         <Routes>
+          {/* Main Pages */}
           <Route path="/" Component={HomePage} />
+          <Route path="/device" Component={DevicePage} />
+          <Route path="/contacts" Component={ContactsPage} />
+          <Route path="/zone" Component={ZonePage} />
+          {/* End Main Pages */}
           <Route path="/register" Component={Register} />
           <Route path="/verification" Component={VerificationPage} />
           <Route path="/forget-password" Component={ForgetPasswordPage} />
@@ -53,14 +60,17 @@ const App = () => {
           <Route path="/gsm-control" Component={GsmControlPage} />
           <Route path="/zone-settings" Component={ZoneSettingsPage} />
           <Route path="/wiredzone-settings" Component={WiredZoneSettingsPage} />
-          <Route path="/wirelesszone-settings" Component={WirelessZoneSettingsPage} />
+          <Route
+            path="/wirelesszone-settings"
+            Component={WirelessZoneSettingsPage}
+          />
           <Route path="/zone-state" Component={ZoneStatePage} />
           <Route path="/remote-settings" Component={RemoteSettingsPage} />
           {/* End Settings Pages */}
         </Routes>
         <ToastContainer />
-      </BrowserRouter>
-    </MainLayout>
+      </MainLayout>
+    </BrowserRouter>
   );
 };
 

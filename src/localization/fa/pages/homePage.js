@@ -1,15 +1,7 @@
 export default {
-    wifi: "وای‌فای",
-    sms: "پیامک",
-    time_settings: "تنظیمات زمان",
-    zone_settings: "تنظیمات زون",
-    zone_state: "وضعیت زون",
-    output_settings: "تنظیمات خروجی",
-    alarm_period: "بازه هشدار",
-    system_mode: "حالت سیستم",
-    tell_settings: "تنظیمات تماس",
-    gsm_settings: "تنظیمات سیم‌ کارت",
-    gsm_number_control: "کنترل شماره سیم کارت",
-    change_menu_password: "تغییر رمز منو",
-    change_sms_password: "تغییر رمز پیامک",
+    device_status: "وضعیت دستگاه",
+    lock: "قفل",
+    unlock: "باز",
+    relays_status: "وضعیت رله ها",
+    relay_number: "رله {{number}}"
 }

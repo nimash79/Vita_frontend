@@ -5,4 +5,11 @@ export default {
     success: "تنظیمات با موفقیت اعمال شد.",
     clear: "پاک کردن",
     confirm: "تأیید",
+    control: "کنترل",
+    phone_settings: "تلفن کننده",
+    device_settings: "دستگاه",
+    zone_settings: "زون",
+    sms: "پیامک",
+    wifi: "وای‌فای",
+    save: "ذخیره",
 }

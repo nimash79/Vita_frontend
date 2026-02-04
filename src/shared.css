@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 56px;
+  height: 38px;
   padding: 0 24px;
   position: relative;
   color: var(--neutral_40);
@@ -19,6 +19,11 @@
   padding: 0 8px;
   border-radius: 8px;
   color: var(--neutral_f9)
+}
+.custom-input-container .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .custom-input {
   border: none;
@@ -35,20 +40,32 @@
 .custom-input.without-margin {
   margin: 0;
 }
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
 .custom-button {
   background-color: var(--primary);
   border: none;
   outline: none;
   border-radius: 14px;
   width: 100%;
-  padding: 5% 0;
+  padding: 1% 0;
+  height: 38px;
   color: var(--neutral_f9);
+}
+.custom-button.outline {
+  border: 1px solid var(--primary);
+  background-color: var(--bg_0);
+  color: var(--primary);
 }
 .lang-en .custom-button {
   font-family: "Changa One", 'Segoe UI';
 }
 .lang-fa .custom-button {
   font-family: "Shabnam", 'Segoe UI';
+}
+.custom-save-accordion {
+  margin-top: 16px;
 }
 
 .custom-checkbox {
@@ -74,14 +91,15 @@
 .custom-calendar-input {
   width: 100%;
   height: 100%;
+  /* margin: 0 8px; */
 }
 .custom-calendar-input .rmdp-input {
   background-color: transparent;
   border: none;
   color: var(--neutral_e9);
-  margin-inline-end: 8px;
   width: 100%;
   height: 100%;
+  direction: ltr;
 }
 .custom-calendar-input .rmdp-input:focus {
   border: none;
@@ -220,3 +238,117 @@
   transform: scale(1);
 }
 /* End Custom Radio Button */
+
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  width: 71px;
+}
+.custom-dropdown-button {
+  border: 1px solid var(--neutral_40);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+  padding: 11px 8.5px;
+}
+.custom-dropdown-button span {
+  background-color: transparent;
+  color: var(--neutral_40);
+  margin-left: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.custom-dropdown .options-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: #FFFFFF;
+  border: 1px solid var(--neutral_40);
+  border-radius: 14px;
+  z-index: 50;
+}
+.custom-dropdown .options {
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 8px 2px;
+}
+.custom-dropdown .options div {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.custom-dropdown .options div:last-child {
+  margin-bottom: 0;
+}
+/* width */
+.custom-dropdown .options::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.custom-dropdown .options::-webkit-scrollbar-track {
+  background: var(--neutral_60);
+  border-radius: 14px;
+}
+
+/* Handle */
+.custom-dropdown .options::-webkit-scrollbar-thumb {
+  background: var(--neutral_df);
+  border-radius: 14px;
+  border: 1px solid var(--neutral_20);
+}
+/* End Custom Dropdown */
+
+/* Accordion */
+.accordion[open] .accordion-arrow {
+  transform: rotate(180deg);
+}
+.accordion .title {
+  display: flex;
+  align-items: center;
+  background-color: var(--backSections);
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.accordion-text {
+  margin-inline-start: 16px;
+}
+.accordion-arrow {
+  margin-inline-start: auto;
+  transition: transform 0.5s ease;
+}
+
+.accordion .content {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow:
+    0 4px 12px rgba(98, 62, 142, 0.08),
+    0 1px 3px rgba(98, 62, 142, 0.06);
+  padding: 16px;
+}
+
+.accordion .dual-button {
+  display: flex;
+  justify-content: space-between;
+}
+.accordion .dual-button button {
+  width: 45%;
+  padding: 3% 0;
+}
+.accordion .section-title {
+  font-size: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--primary);
+  border-radius: 4px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+/* End Accordion */
